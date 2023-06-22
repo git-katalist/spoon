@@ -13,7 +13,7 @@ const posts = await Astro.glob("../posts/*.mdx");
           <Card
             title={post.frontmatter.title}
             body={post.frontmatter.body}
-            href={`/blog/${post.frontmatter.slug}`}
+            href={`/spoon/blog/${post.frontmatter.slug}`}
           />
         ))
       }
