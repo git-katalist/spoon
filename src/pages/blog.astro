@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const posts = await Astro.glob("../posts/*.mdx");
+---
+
+<Layout title="Astro Blog">
+  <section>
+    <div>
+      {
+        posts.map((post) => (
+          <Card
+            title={post.frontmatter.title}
+            body={post.frontmatter.body}
+            href={`/blog/${post.frontmatter.slug}`}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>
